@@ -8,6 +8,7 @@
 // @grant        none
 // ==/UserScript==
 
+
 function main(){
     var ReadAll = document.getElementsByClassName("read-all");
     if (ReadAll.length) {
