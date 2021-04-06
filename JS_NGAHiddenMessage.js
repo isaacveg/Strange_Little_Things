@@ -23,6 +23,7 @@ var pageURLCheckTimer = setInterval (
     , 1000
 );
 
+
 function gmMain () {
     var x = document.getElementsByName("lessernukeblk");
     for(var i=0;i<x.length;i++)
