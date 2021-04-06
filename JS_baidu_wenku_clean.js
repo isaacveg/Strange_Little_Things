@@ -1,13 +1,12 @@
 // ==UserScript==
 // @name         百度文库优化
 // @namespace    http://tampermonkey.net/
-// @version      0.11
-// @description  百度文库优化
+// @version      0.12
+// @description  鲨凋百度文库的牛皮癣！
 // @author       isaacveg
 // @match        *://wenku.baidu.com/view/*
 // @grant        none
 // ==/UserScript==
-
 
 function main(){
     var ReadAll = document.getElementsByClassName("read-all");
@@ -26,28 +25,39 @@ function main(){
     }
 
     var DocBtnW = document.getElementsByClassName("doc-btns-wrap");
-    DocBtnW[0].style = "display:none";
-
-    var DocInfo = document.getElementsByClassName("doc-info-right");
-    DocInfo[0].style = "display:none";
-
-    var CP = document.getElementById("color-plate");
-    CP.style = "display:none";
-
-    var PTB = document.getElementsByClassName("pure-tool-btn");
-    PTB[0].style = "display:none";
-
-    var VipCard = document.getElementsByClassName("vip-card-wrap");
-    VipCard[0].style = "display:none";
-
-    var BottomReadToolBar = document.getElementsByClassName("tool-bar-wrapper");
-    BottomReadToolBar[0].style = "display:none";
-
-    var NoCourse = document.getElementsByClassName("lazy-load");
-    for(var x = 0; x<NoCourse.length;x=x+1){
-        NoCourse[x].style = "display:none";
+    if (DocBtnW.length) {
+        DocBtnW[0].style = "display:none";
     }
 
+    var DocInfo = document.getElementsByClassName("doc-info-right");
+    if (DocInfo.length) {
+        DocInfo[0].style = "display:none";
+    }
+
+    var CP = document.getElementById("color-plate");
+    if (CP) {
+        CP.style = "display:none";
+    }
+
+    var PTB = document.getElementsByClassName("pure-tool-btn");
+    if (PTB.length) {
+        PTB[0].style = "display:none";
+    }
+    
+    var VipCard = document.getElementsByClassName("vip-card-wrap");
+    if (VipCard.length) {
+        VipCard[0].style = "display:none";
+    }
+
+    var CourseWrapper = document.getElementsByClassName("lazy-load");
+    for(var x = 0; x < CourseWrapper.length; x=x+1){
+        CourseWrapper[x].style = "display:none";
+    }
+
+    var RightChannel = document.getElementsByClassName("right-channel-wrap");
+    if (RightChannel.length) {
+        RightChannel[0].style = "display:none";
+    }
 
     var SearchBar = document.getElementsByClassName("search-tab-content");
     SearchBar[0].style = "display:none";
@@ -60,6 +70,14 @@ function main(){
 
     var BadC = document.getElementsByClassName("comment-wrapper");
     BadC[0].style = "display:none";
+
+    var BottomToolBar = document.getElementsByClassName("tool-bar-wrapper");
+    BottomToolBar[0].style = "display:none";
+
+    var PriceV = document.getElementsByClassName("doc-price-voucher-wrap");
+    if (PriceV.length) {
+        PriceV[0].style = "display:none";
+    }
 }
 
-setTimeout(main,1500);
+window.onload = setTimeout(main,1500);
