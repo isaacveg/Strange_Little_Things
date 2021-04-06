@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  百度文库优化
 // @author       isaacveg
-// @match        *://wenku.baidu.com/view/*.html
+// @match        *://wenku.baidu.com/view/*
 // @grant        none
 // ==/UserScript==
 
