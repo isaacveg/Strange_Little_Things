@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         百度文库优化
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.11
 // @description  百度文库优化
 // @author       isaacveg
 // @match        *://wenku.baidu.com/view/*
