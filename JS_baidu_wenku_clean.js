@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         百度文库优化
 // @namespace    http://tampermonkey.net/
-// @version      0.12
+// @version      0.13
 // @description  鲨凋百度文库的牛皮癣！
 // @author       isaacveg
 // @match        *://wenku.baidu.com/view/*
 // @grant        none
 // ==/UserScript==
+
 
 function main(){
     var ReadAll = document.getElementsByClassName("read-all");
@@ -21,7 +22,12 @@ function main(){
 
     var ReadEnd = document.getElementsByClassName("try-end-fold-page");
     if (ReadEnd.length) {
-        ReadEnd[0].style = "display:none";
+        ReadEnd[0].style = "opacity:50%";
+    }
+
+    var PTT = document.getElementsByClassName("pay-text-link-container");
+    if (PTT.length) {
+        PTT[0].style = "display:none";
     }
 
     var DocBtnW = document.getElementsByClassName("doc-btns-wrap");
